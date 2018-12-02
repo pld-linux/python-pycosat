@@ -20,14 +20,20 @@ BuildRequires:	picosat-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
+BuildRequires:	python-devel
 BuildRequires:	python-modules
 BuildRequires:	python-setuptools
+%if %{with tests}
+BuildRequires:	python-pytest
+%endif
 %endif
 %if %{with python3}
 BuildRequires:	python3-devel
 BuildRequires:	python3-modules
-BuildRequires:	python3-pytest
 BuildRequires:	python3-setuptools
+%if %{with tests}
+BuildRequires:	python3-pytest
+%endif
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
