@@ -84,8 +84,6 @@ rm -rf $RPM_BUILD_ROOT
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 %py_postclean
-
-%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/test_pycosat.py*
 %endif
 
 %if %{with python3}
